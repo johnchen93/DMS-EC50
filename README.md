@@ -26,10 +26,10 @@ For the core EC50 fitting, the following functions should be executed in the ind
   
 For a more detailed explanation of all functions, continue reading below.
 The 3 main functions for the EC50 calculation are as follows:
-1.	mergeGrowthPercentage() – Takes input count files and combines them into a single file while converting the counts into frequencies. It also performs noise filtering to remove variants in non-selected conditions that have frequencies lower than 2 × of the expected frequency from sequencing errors alone. 
+1.	mergeGrowthPercentage() – Takes input count files and cell culture OD600s and combines them into a single file while converting the counts into frequencies and population size estimates. It also performs noise filtering to remove variants in non-selected conditions that have frequencies lower than 2 × of the expected frequency from sequencing errors alone. 
 This function produces 2 output files:  
     *	‘variants_above_noise.txt’ – A file containing the variants that are above sequencing errors.  
-    *	‘dms_survival.txt’ – A file containing the variant frequencies of the selected conditions.  
+    *	‘dms_survival.txt’ – A file containing the variant frequencies and population size estimates of the selected conditions.  
 
 2.	fitEC50(sample_step=None) – Takes the output files from ‘mergeGrowthPercentage()’ and performs curve fitting based on a 4 parameter sigmoidal equation, defined by the ‘ECcurve’ function. If a file of initial estimates is not already available, it will also make initial estimates for the fit using the ‘fitGuess()’. 
 
