@@ -379,7 +379,7 @@ def cleanUpFits():
     print( fits[fits['high_resist']] )
     print( fits[fits['filled_ec50'].isna()]['ignore'].value_counts() )
     
-    fits['log2_ec50'] = fits['ec50'].apply( lambda x: np.log2(x) if not np.isnan(x) else np.nan )
+    fits['log2_ec50'] = fits['filled_ec50'].apply( lambda x: np.log2(x) if not np.isnan(x) else np.nan )
     fits.to_csv('ec50_fitted_filled.txt', sep='\t', index=False)
     
 def fillFit(row):
