@@ -1,4 +1,6 @@
 # DMS-EC50
+Using in the following publication:  
+[Environmental selection and epistasis in an empirical phenotype–environment–fitness landscape, Nat Ecol Evo 2022](https://www.nature.com/articles/s41559-022-01675-5)
 
 ## Overview
 This is a set of scripts for calculating EC50 from dose-response curves generated from deep sequencing data of a large number of protein variants placed under antibiotic selection. The script is designed to start from sequencing counts of all variants, which are converted into variant frequencies. The frequencies are multiplied with the cell concentration of the sample in which the variants were selected to estimate the population size. The population size is then plotted as a function of the antibiotic concentration for a dose-response curve.
